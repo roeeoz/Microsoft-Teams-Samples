@@ -65,27 +65,27 @@ namespace Microsoft.BotBuilderSamples
                 try
                 {
                     // Pull in the data from the Microsoft Graph.
-                    var client = new SimpleGraphClient(tokenResponse.Token);
-                    var me = await client.GetMeAsync();
-                    var title = !string.IsNullOrEmpty(me.JobTitle) ?
-                                me.JobTitle : "Unknown";
+                    //var client = new SimpleGraphClient(tokenResponse.Token);
+                    //var me = await client.GetMeAsync();
+                    //var title = !string.IsNullOrEmpty(me.JobTitle) ?
+                    //            me.JobTitle : "Unknown";
 
-                    await stepContext.Context.SendActivityAsync($"You're logged in as {me.DisplayName} ({me.UserPrincipalName}); you job title is: {title}");
+                    //await stepContext.Context.SendActivityAsync($"You're logged in as {me.DisplayName} ({me.UserPrincipalName}); you job title is: {title}");
 
-                    var photo = await client.GetPhotoAsync();
+                    //var photo = await client.GetPhotoAsync();
 
-                    if (photo !="") {
-                        var cardImage = new CardImage(photo);
-                        var card = new ThumbnailCard(images: new List<CardImage>() { cardImage });
-                        var reply = MessageFactory.Attachment(card.ToAttachment());
+                    //if (photo !="") {
+                    //    var cardImage = new CardImage(photo);
+                    //    var card = new ThumbnailCard(images: new List<CardImage>() { cardImage });
+                    //    var reply = MessageFactory.Attachment(card.ToAttachment());
 
-                        await stepContext.Context.SendActivityAsync(reply, cancellationToken);
-                    }
-                    else
-                    {
-                        var profile_Message = "Sorry !! User doesn't have a profile picture to display";
-                        await stepContext.Context.SendActivityAsync(profile_Message);
-                    }
+                    //    await stepContext.Context.SendActivityAsync(reply, cancellationToken);
+                    //}
+                    //else
+                    //{
+                    //    var profile_Message = "Sorry !! User doesn't have a profile picture to display";
+                    //    await stepContext.Context.SendActivityAsync(profile_Message);
+                    //}
 
                     return await stepContext.PromptAsync(
                         nameof(ConfirmPrompt),

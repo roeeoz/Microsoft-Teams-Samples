@@ -7,3 +7,4 @@ additionalMetadata:
   sampleTag: Microsoft-Teams-Samples:bot-conversation-sso-quickstart-csharp
 
 environmentFolderPath: ./env
+projectId: 5e0eeecf-94ad-4e7a-a78c-bf026cd6d7d5
